@@ -29,20 +29,20 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = "none"
 
     let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
-    sectionSeleccionarAtaque.style.display = "flex"    
+    sectionSeleccionarAtaque.style.display = "flex"
 
     let inputMegalodonte = document.getElementById("megalodonte")
     let inputToporrestre = document.getElementById("toporrestre")
     let inputFenix = document.getElementById("fenix")
     let spanMascotaJugador = document.getElementById("nombre-dinomascota")
 
-    if(inputMegalodonte.checked) {
-       spanMascotaJugador.innerHTML = " Megalodonte "
-    } else if(inputToporrestre.checked) {
+    if (inputMegalodonte.checked) {
+        spanMascotaJugador.innerHTML = " Megalodonte "
+    } else if (inputToporrestre.checked) {
         spanMascotaJugador.innerHTML = " Toporrestre "
-    } else if(inputFenix.checked) {
+    } else if (inputFenix.checked) {
         spanMascotaJugador.innerHTML = " Fénix "
-    } else{
+    } else {
         alert("No seleccionaste tu Dinomascota")
     }
 
@@ -50,13 +50,13 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMascotaEnemigo() {
-    let mascotaAleatorio = random(1,3)
+    let mascotaAleatorio = random(1, 3)
     let ataqueEnemigo = document.getElementById("nombre-dinoenemigo")
     if (mascotaAleatorio == 1) {
         ataqueEnemigo.innerHTML = "Megalodonte"
-    } else if(mascotaAleatorio == 2) {
+    } else if (mascotaAleatorio == 2) {
         ataqueEnemigo.innerHTML = "Toporrestre"
-    } else if(mascotaAleatorio == 3) {
+    } else if (mascotaAleatorio == 3) {
         ataqueEnemigo.innerHTML = "Fénix"
     }
 }
@@ -75,8 +75,8 @@ function ataqueTierra() {
 }
 
 function ataqueAleatorioEnemigo() {
-    let ataqueAleatorio = random(1,3)
-    
+    let ataqueAleatorio = random(1, 3)
+
     if (ataqueAleatorio == 1) {
         ataqueEnemigo = 'FUEGO'
     } else if (ataqueAleatorio == 2) {
@@ -89,27 +89,27 @@ function ataqueAleatorioEnemigo() {
 }
 
 function combate() {
-    let spanVidasJugador = dentById("viocument.getElemdas-jugador")
+    let spanVidasJugador = document.getElementById("vidas-jugador")
     let spanVidasEnemigo = document.getElementById("vidas-enemigo")
 
-    if(ataqueEnemigo == ataqueJugador) {
+    if (ataqueEnemigo == ataqueJugador) {
         crearMensaje("EMPATE")
-    } else if(ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") {
+    } else if (ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") {
         crearMensaje("GANASTE")
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-    } else if(ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") {
+        spanVidasEnemigo.innerText = vidasEnemigo
+    } else if (ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") {
         crearMensaje("GANASTE")
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-    } else if(ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA") {
+        spanVidasEnemigo.innerText = vidasEnemigo
+    } else if (ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA") {
         crearMensaje("GANASTE")
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
+        spanVidasEnemigo.innerText = vidasEnemigo
     } else {
         crearMensaje("PERDISTE")
         vidasJugador--
-        spanVidasJugador.innerHTML = vidasJugador
+        spanVidasJugador.innerText = vidasJugador
     }
     revisarVidas()
 }
@@ -117,7 +117,7 @@ function combate() {
 function revisarVidas() {
     if (vidasEnemigo == 0) {
         crearMensajeFinal("FELICIDADES ¡GANASTE!")
-    } else if(vidasJugador == 0) {
+    } else if (vidasJugador == 0) {
         crearMensajeFinal("¡PERDISTE! MAS SUERTE LA PRÓXIMA VEZ")
     }
 }
@@ -126,7 +126,7 @@ function crearMensaje(resultado) {
     let sectionMensajes = document.getElementById("resultado")
     let ataqueDelJugador = document.getElementById("ataques-del-jugador")
     let ataqueDelEnemigo = document.getElementById("ataques-del-enemigo")
-    
+
     let nuevoAtaqueDelJugador = document.createElement("p")
     let nuevoAtaqueDelEnemigo = document.createElement("p")
 
@@ -144,7 +144,7 @@ function crearMensaje(resultado) {
 
 function crearMensajeFinal(resultadoFinal) {
     let sectionMensajes = document.getElementById("resultado")
-    
+
     sectionMensajes.innerHTML = resultadoFinal
 
     let botonFuego = document.getElementById('boton-fuego')
@@ -162,7 +162,7 @@ function reiniciar() {
     location.reload()
 }
 
-function random(min, max){
-    return Math.floor(Math.random()*(max-min+1)+min)
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
-window.addEventListener("load" ,iniciarJuego)
+window.addEventListener("load", iniciarJuego)
