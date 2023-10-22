@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,26 +9,30 @@
     <link rel="stylesheet" href="styles.css">
     <title>Dinowar</title>
 </head>
+
 <body>
     <h1 class="titulo">DinoWar 💧🔥🌱</h1>
     <section id="seleccionar-dino">
         <h2 class="subtitulo">Elige tu Dinomascota:</h2>
         <div class="tarjetas">
-                <input type="radio" name="dinomascotas" id="megalodonte">
-                <label class="tarjeta-dino" for="megalodonte">
-                    <p>Megalodonte</p>
-                    <img src="./assets/Megalodonte.png" alt="Megalodonte"></label>                   
+            <input type="radio" name="dinomascotas" id="megalodonte">
+            <label class="tarjeta-dino" for="megalodonte">
+                <p>Megalodonte</p>
+                <img src="./assets/Megalodonte.png" alt="Megalodonte">
+            </label>
 
-                <input type="radio" name="dinomascotas" id="toporrestre">
-                <label class="tarjeta-dino" for="toporrestre">
-                    <p>Toporrestre</p>
-                    <img src="./assets/toporestre.png" alt="Megalodonte"></label>                   
-            
-                <input type="radio" name="dinomascotas" id="fenix">
-                <label class="tarjeta-dino" for="fenix">                
-                    <p>Fénix</p>
-                    <img src="./assets/fenix.png" alt="Megalodonte"></label>
-        </div>       
+            <input type="radio" name="dinomascotas" id="toporrestre">
+            <label class="tarjeta-dino" for="toporrestre">
+                <p>Toporrestre</p>
+                <img src="./assets/toporestre.png" alt="Megalodonte">
+            </label>
+
+            <input type="radio" name="dinomascotas" id="fenix">
+            <label class="tarjeta-dino" for="fenix">
+                <p>Fénix</p>
+                <img src="./assets/fenix.png" alt="Megalodonte">
+            </label>
+        </div>
         <!-- Megalodon-agua
         toporrestre-tierra
         Fenix-fuego
@@ -46,13 +51,13 @@
             <button id="boton-agua" class="boton-ataque-dino">Agua💧</button>
             <button id="boton-tierra" class="boton-ataque-dino">Tierra🌱</button>
         </div>
-        
-        <div id="mensaje">  
-                <p id="resultado"></p>
-                <section id="reiniciar">       
-                    <button id="boton-reiniciar">Reiniciar</button>
-                </section>
-        </div>   
+
+        <div id="mensaje">
+            <p id="resultado"></p>
+            <section id="reiniciar">
+                <button id="boton-reiniciar">Reiniciar</button>
+            </section>
+        </div>
 
         <div class="combate">
             <div class="dinoproceso">
@@ -61,13 +66,12 @@
                 <div id="ataques-del-jugador"></div>
             </div>
             <div class="dinoproceso-enemigo">
-                <span id="vidas-enemigo">
-                    <strong>3</strong>
-                </span>
+                <span id="vidas-enemigo">3</span>
                 <p id="nombre-dinoenemigo"></p>
                 <div id="ataques-del-enemigo"></div>
             </div>
         </div>
-    </section> 
-    </body>
+    </section>
+</body>
+
 </html>
